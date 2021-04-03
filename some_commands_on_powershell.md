@@ -25,6 +25,9 @@ kubectl delete pod [podname] ==> will cause pod to be recreated (il will kill th
 
 kubectl delete deployment [name-of-deployment] ==> delete deployment that manages the pod
 
+kubectl get pod my-nginx -o yaml ==> get details of the pod my-nginx
+
+kubectl describe pod my-nginx ==> get details of the pod (with a list of events)
 
 # kuberenetes web ui dashboard
 
