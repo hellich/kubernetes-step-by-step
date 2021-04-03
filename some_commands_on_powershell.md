@@ -15,6 +15,16 @@ kubectl create [resource] ==> create a resource
 
 kubectl apply [resource] ==> create or modify a resource
 
+kubectl run [podname] --image=nginx:alpine ==> run the nginx:alpine container in a pod
+
+kubectl port-forward [podname] 8080:80 ==> enable pod container to be called externally. 8080 is the external port to call from a web browser (for instance), 80 is the internal port used by the application running inside the container
+
+kubectl get pods ==> lists pods
+
+kubectl delete pod [podname] ==> will cause pod to be recreated (il will kill the running pod and create a new one since kubernetes maintain the current state)
+
+kubectl delete deployment [name-of-deployment] ==> delete deployment that manages the pod
+
 
 # kuberenetes web ui dashboard
 
