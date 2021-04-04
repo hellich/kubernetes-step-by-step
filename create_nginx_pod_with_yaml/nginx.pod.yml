@@ -11,3 +11,19 @@ spec:
     image: nginx:alpine
     ports:
     - containerPort: 80
+    livenessProbe: #used to determine when to restart the pod (check if the pod is healthy)
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 15
+      timeoutSeconds: 2
+      periodSeconds: 5 # default is 10
+      failureThreshold: 1 # default is 3
+    readinessProbe: #used to determine when to send requests to the pod (check if the pod is ready)
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 3
+      periodSeconds: 5
+      failureThreshold: 1
+
